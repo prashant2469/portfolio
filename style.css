@@ -1,6 +1,148 @@
 body {
-    /* Set line height to 1.5 times the font size
-	   and use the OS’s UI font as the website font
-	 */
-    font: 100%/1.5 system-ui;
+
+  font: 100%/1.5 system-ui;
+  max-width: 150ch;
+  margin-inline: auto;
+  padding: 3ch;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  /* Light gray background */
+  padding: 0.5em;
+  /* Add some spacing inside the nav */
+  margin-bottom: 1em;
+  /* Separate the nav from the content below */
+  border-bottom: 1px solid #d3d3d3;
+  /* Light gray bottom border */
+}
+
+/* Styling the links */
+nav a {
+  display: inline-block;
+  /* Make links behave like blocks */
+  text-decoration: none;
+  /* Remove the underline from links */
+  color: inherit;
+  text-align: center;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  /* Smooth hover transition */
+}
+
+/* Highlighting the current page */
+nav a.current {
+  border-bottom: 4px solid #888;
+  /* Add a thick gray bottom border */
+  padding-bottom: 0.2em;
+  /* Adjust padding to balance the border */
+}
+
+/* Add hover effect */
+nav a:hover {
+  background-color: #e0e0e0;
+  /* Light gray background on hover */
+  color: #000;
+  /* Change text color on hover */
+}
+
+/* Contact Form with Grid Layout */
+.contact-form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  /* Space between grid items */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1em;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: inherit;
+}
+
+.contact-form label {
+  align-self: center;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.contact-form button {
+  grid-column: span 2;
+  /* Make the button span across both columns */
+  font-family: inherit;
+  padding: 0.75em;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-accent, #007BFF);
+  /* Use accent color if defined */
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-accent-hover, #0056b3);
+  /* Slightly darker shade */
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1em;
+  /* Reduce spacing between projects */
+  margin: 2em auto;
+  max-width: 1200px;
+  padding: 1em;
+}
+
+.projects article {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5em;
+  /* Reduce padding inside each entry */
+  background-color: #f9f9f9;
+  text-align: center;
+  font-size: 0.9em;
+  /* Slightly smaller font size */
+}
+
+.projects img {
+  max-width: 100%;
+  height: 150px;
+  object-fit: cover;
+  /* Ensure the image scales nicely */
+  border-radius: 4px;
+  margin-bottom: 0.5em;
+}
+
+.projects h2 {
+  font-size: 1.2em;
+  /* Reduce heading size */
+  margin-bottom: 0.3em;
+}
+
+.projects p {
+  font-size: 0.8em;
+  color: #555;
+  margin: 0.5em 0;
 }
