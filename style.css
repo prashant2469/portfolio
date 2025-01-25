@@ -1,10 +1,48 @@
 body {
+  background-color: white;
+  color: black;
+}
 
+/* Dark Mode (when data-theme="dark") */
+body[data-theme="dark"] {
+  background-color: black;
+  color: white;
+}
+
+/* Toggle Button Styles */
+#theme-toggle {
+  position: absolute;
+  top: 6rem;
+  /* Adjust the spacing as needed */
+  right: 1rem;
+  /* Move it to the right */
+  padding: 10px 20px;
+  background-color: #ddd;
+  /* Default button background */
+  border: 1px solid #aaa;
+  color: black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Style for dark mode */
+body[data-theme="dark"] #theme-toggle {
+  background-color: #444;
+  color: white;
+  border-color: #666;
+}
+
+body {
   font: 100%/1.5 system-ui;
   max-width: 150ch;
   margin-inline: auto;
   padding: 3ch;
+  background-color: white;
+  color: black;
+
 }
+
 
 ul,
 li {
@@ -13,47 +51,46 @@ li {
   list-style: none;
 }
 
+/* Default (Light Mode) Navigation Bar */
 nav {
   display: flex;
   justify-content: space-around;
   background-color: #f9f9f9;
-  /* Light gray background */
+  /* Light background */
+  color: black;
   padding: 0.5em;
-  /* Add some spacing inside the nav */
   margin-bottom: 1em;
-  /* Separate the nav from the content below */
   border-bottom: 1px solid #d3d3d3;
-  /* Light gray bottom border */
+  /* Light gray border */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Styling the links */
+/* Links in the navigation bar */
 nav a {
-  display: inline-block;
-  /* Make links behave like blocks */
   text-decoration: none;
-  /* Remove the underline from links */
   color: inherit;
-  text-align: center;
   padding: 0.5em 1em;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
-  /* Smooth hover transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Highlighting the current page */
-nav a.current {
-  border-bottom: 4px solid #888;
-  /* Add a thick gray bottom border */
-  padding-bottom: 0.2em;
-  /* Adjust padding to balance the border */
+/* Dark Mode Navigation Bar */
+body[data-theme="dark"] nav {
+  background-color: #333;
+  /* Dark background */
+  color: white;
+  border-bottom: 1px solid #555;
+  /* Darker border */
 }
 
-/* Add hover effect */
-nav a:hover {
-  background-color: #e0e0e0;
-  /* Light gray background on hover */
-  color: #000;
-  /* Change text color on hover */
+body[data-theme="dark"] nav a {
+  color: white;
+}
+
+body[data-theme="dark"] nav a:hover {
+  background-color: #444;
+  /* Hover effect in dark mode */
+  color: white;
 }
 
 /* Contact Form with Grid Layout */
