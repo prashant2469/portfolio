@@ -3,7 +3,6 @@ body {
   color: black;
 }
 
-/* Dark Mode (when data-theme="dark") */
 body[data-theme="dark"] {
   background-color: black;
   color: white;
