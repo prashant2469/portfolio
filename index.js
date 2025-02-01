@@ -36,3 +36,17 @@ async function loadGitHubProfile(username) {
 
 // Call the function with your GitHub username
 loadGitHubProfile('prashant2469');
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirectPath = urlParams.get("redirect");
+
+    if (redirectPath) {
+        // Use JavaScript to dynamically load the correct page content
+        console.log("Redirected from:", redirectPath);
+
+        if (redirectPath.includes("projects")) {
+            loadProjects(); // Ensure this function loads the projects page dynamically
+        }
+    }
+});
