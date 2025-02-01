@@ -139,5 +139,3 @@ toggleButton.addEventListener("click", () => {
     // Update button text immediately
     toggleButton.textContent = newTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode";
 });
-
-
