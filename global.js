@@ -84,7 +84,7 @@ currentLink?.classList.add("current");
 
 // Detect if running on GitHub Pages
 const isGitHubPages = window.location.hostname.includes("github.io");
-const basePath = isGitHubPages ? "/your-repo-name" : ""; // Change 'your-repo-name' to your GitHub repo name
+const basePath = isGitHubPages ? "/portfolio" : ""; // Change 'your-repo-name' to your GitHub repo name
 
 // Pages list with dynamic paths
 let pages = [
