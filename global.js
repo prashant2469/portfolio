@@ -51,7 +51,7 @@ if (localStorage.colorScheme) {
     setColorScheme(localStorage.colorScheme); // Apply the saved color scheme
 } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
     themeSelector.value = "dark"; // Set to dark if OS is in dark mode
-    setColorScheme("dark"); // Apply dark mode
+    setColorScheme("dark");
 } else {
     themeSelector.value = "light"; // Set to light if OS is in light mode
     setColorScheme("light"); // Apply light mode
@@ -75,10 +75,10 @@ window.addEventListener('load', () => {
 
 // Define the pages for the navigation menu
 let pages = [
-    { url: '../index.html', title: 'Home' },
-    { url: '../projects/index.html', title: 'Projects' },
-    { url: '../contact/index.html', title: 'Contact' },
-    { url: '../resume/index.html', title: 'Resume' },
+    { url: 'index.html', title: 'Home' },
+    { url: 'projects/index.html', title: 'Projects' },
+    { url: 'contact/index.html', title: 'Contact' },
+    { url: 'resume/index.html', title: 'Resume' },
     { url: 'https://github.com/prashant2469', title: 'GitHub Profile' }// External link
 
 ];
