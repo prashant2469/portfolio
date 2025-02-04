@@ -82,41 +82,42 @@ currentLink?.classList.add("current");
 
 
 
+// Detect if running on GitHub Pages
+const isGitHubPages = window.location.hostname.includes("github.io");
+const basePath = isGitHubPages ? "/your-repo-name" : ""; // Change 'your-repo-name' to your GitHub repo name
+
+// Pages list with dynamic paths
 let pages = [
-    { url: "/index.html", title: "Home" },
-    { url: "/projects/index.html", title: "Projects" },
-    { url: "/contact/index.html", title: "Contact" },
-    { url: "/resume/index.html", title: "Resume" },
+    { url: `${basePath}/index.html`, title: "Home" },
+    { url: `${basePath}/projects/index.html`, title: "Projects" },
+    { url: `${basePath}/contact/index.html`, title: "Contact" },
+    { url: `${basePath}/resume/index.html`, title: "Resume" },
     { url: "https://github.com/prashant2469", title: "GitHub" },
 ];
 
-const ARE_WE_HOME = document.documentElement.classList.contains('home');
+const ARE_WE_HOME = document.documentElement.classList.contains("home");
 
 // Prevent duplicate navbars
-if (!document.querySelector('.navbar')) {
-    let nav = document.createElement('nav');
-    nav.className = 'navbar';
+if (!document.querySelector(".navbar")) {
+    let nav = document.createElement("nav");
+    nav.className = "navbar";
 
-    pages.forEach(page => {
-        let url = page.url;
-        url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
-
-        let link = document.createElement('a');
-        link.href = url;
+    pages.forEach((page) => {
+        let link = document.createElement("a");
+        link.href = page.url;
         link.textContent = page.title;
 
-        if (url.startsWith('http')) {
-            link.setAttribute('target', '_blank');
+        if (page.url.startsWith("http")) {
+            link.setAttribute("target", "_blank");
         }
 
-        if (location.host === link.host && location.pathname === link.pathname) {
-            link.classList.add('current');
+        if (window.location.pathname === new URL(page.url, window.location.origin).pathname) {
+            link.classList.add("current");
         }
 
         nav.append(link);
     });
 
-    // Add the navigation bar only if one does not already exist
     document.body.prepend(nav);
 }
 
