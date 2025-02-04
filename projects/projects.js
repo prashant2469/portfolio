@@ -1,33 +1,30 @@
 import { fetchJSON, renderProjects } from '../global.js';
 
+// Select the projects container
+const projectsContainer = document.querySelector('.projects');
+
+// Function to load and render projects
 async function loadProjects() {
-    const projectsContainer = document.querySelector('.projects');
-    const projectsTitle = document.querySelector('.projects-title');
-
-    if (!projectsContainer) {
-        console.error('Projects container not found.');
-        return;
-    }
-
     try {
-        // Fetch projects data
         const projects = await fetchJSON('../lib/projects.json');
 
-        console.log('Projects fetched:', projects); // Debugging line
+        // Update the projects count in the title
+        const projectsTitle = document.querySelector('.projects-title');
+        if (Array.isArray(projects)) {
+            projectsTitle.textContent = `${projects.length} Projects`; // Change format to "12 Projects"
+        }
 
-        // Render projects dynamically
-        renderProjects(projects, projectsContainer, 'h2');
-
-        // Update the project count dynamically
-        if (projectsTitle) {
-            projectsTitle.textContent = `${projects.length} Projects`;
-            console.log('Updated projects title:', projects.length); // Debugging line
+        // Check if projects is an array and has content
+        if (Array.isArray(projects) && projects.length > 0) {
+            renderProjects(projects, projectsContainer, 'h2');
         } else {
-            console.warn('Projects title element not found.');
+            // Handle empty projects array
+            projectsContainer.innerHTML = '<p>No projects available.</p>'; // Placeholder message
         }
     } catch (error) {
         console.error('Error loading projects:', error);
     }
 }
 
-loadProjects();
+// Call the function to load projects when the script runs
+loadProjects(); 

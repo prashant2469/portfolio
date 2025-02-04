@@ -1,52 +1,58 @@
-import { fetchJSON, renderProjects } from './global.js';
-import { fetchGitHubData } from './global.js';
+import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
 
-document.addEventListener("DOMContentLoaded", async () => {
-    const projectsContainer = document.querySelector(".projects");
-
-    if (!projectsContainer) {
-        console.error("Error: Projects container not found.");
-        return;
-    }
-
+// Function to load and render the latest projects
+async function loadLatestProjects() {
     try {
         const projects = await fetchJSON('./lib/projects.json');
-        const latestProjects = projects.slice(0, 3);
+        const latestProjects = projects.slice(0, 3); // Get the first three projects
+
+        // Select the projects container
+        const projectsContainer = document.querySelector('.projects');
+
+        // Render the latest projects
         renderProjects(latestProjects, projectsContainer, 'h2');
     } catch (error) {
-        console.error("Failed to load latest projects:", error);
-    }
-});
-
-const profileStats = document.querySelector('#profile-stats');
-async function loadGitHubProfile(username) {
-    const githubData = await fetchGitHubData(username);
-
-    if (profileStats && githubData) {
-        profileStats.innerHTML = `
-            <dl>
-                <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
-                <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
-                <dt>Followers:</dt><dd>${githubData.followers}</dd>
-                <dt>Following:</dt><dd>${githubData.following}</dd>
-            </dl>
-        `;
+        console.error('Error loading latest projects:', error);
     }
 }
 
-// Call the function with your GitHub username
-loadGitHubProfile('prashant2469');
+// Function to load GitHub data
+async function loadGitHubData() {
+    try {
+        const githubData = await fetchGitHubData('prashant2469'); // Replace with the desired GitHub username
+        console.log('GitHub Data:', githubData); // Log the fetched GitHub data
 
-document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const redirectPath = urlParams.get("redirect");
+        // Select the profile stats container
+        const profileStats = document.querySelector('#profile-stats');
 
-    if (redirectPath) {
-        // Use JavaScript to dynamically load the correct page content
-        console.log("Redirected from:", redirectPath);
-
-        if (redirectPath.includes("projects")) {
-            loadProjects(); // Ensure this function loads the projects page dynamically
+        // Check if the profileStats container exists
+        if (profileStats) {
+            profileStats.innerHTML = `
+                <div class="stat">
+                    <h3>FOLLOWERS</h3>
+                    <p id="followers-count">${githubData.followers}</p>
+                </div>
+                <div class="stat">
+                    <h3>FOLLOWING</h3>
+                    <p id="following-count">${githubData.following}</p>
+                </div>
+                <div class="stat">
+                    <h3>PUBLIC REPOS</h3>
+                    <p id="repos-count">${githubData.public_repos}</p>
+                </div>
+                <div class="stat">
+                    <h3>PUBLIC GISTS</h3>
+                    <p id="gists-count">${githubData.public_gists}</p>
+                </div>
+            `;
         }
+    } catch (error) {
+        console.error('Error fetching GitHub data:', error);
     }
-});
+}
+
+// Call the function to load the latest projects when the script runs
+loadLatestProjects();
+
+// Call the function to load GitHub data when the script runs
+loadGitHubData();

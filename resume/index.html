@@ -4,104 +4,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant Potluri - Resume</title>
-    <!-- <link rel="stylesheet" href="/portfolio/style.css">
-    <script src="/portfolio/global.js" type="module"></script> -->
+    <title>Resume - Prashant Potluri</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="/global.js" type="module"></script>
-    <script type="module" src="./index.js"></script>
-
 </head>
 
 <body>
-    <!-- <nav class="navbar">
-        <a href="../index.html">Home</a> |
-        <a href="index.html">Projects</a> |
-        <a href="../contact/index.html">Contact</a> |
-        <a href="../resume/index.html">Resume</a> |
-        <a href="https://github.com/prashant2469" target="_blank">GitHub</a>
-    </nav> -->
-    <header>
-        <h1>Prashant Potluri</h1>
-        <p>Software Engineer | Property Manager | Entrepreneur</p>
-        <nav>
-            <a href="#experience">Experience</a> |
-            <a href="#education">Education</a> |
-            <a href="#skills">Skills</a> |
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
 
-    <section id="experience">
+    <div class="resume-container">
         <header>
-            <h2>Professional Experience</h2>
+            <h1>Prashant Potluri</h1>
+            <p>650-695-2683 | <a href="mailto:prashant3.potluri@gmail.com">prashant3.potluri@gmail.com</a> | <a
+                    href="https://linkedin.com/in/prashantpotluri" target="_blank">LinkedIn</a> | <a
+                    href="https://github.com/prashant2469" target="_blank">GitHub</a></p>
         </header>
-        <article>
-            <header>
-                <h3>Premium Page Team Lead - OpenAI</h3>
-                <time datetime="2023-05">May 2023</time> - Present
-            </header>
-            <p>Lead the Premium Page Team, ensuring all deliverables are met and collaborating closely with the Premium
-                Team to enhance web experiences.</p>
-        </article>
 
-        <article>
-            <header>
-                <h3>Property Manager - Venture Rentals LLC</h3>
-                <time datetime="2020-01">Jan 2020</time> - Present
-            </header>
-            <p>Manage a diverse portfolio of properties across North and South Carolina, focusing on tenant
-                satisfaction, maintenance, and legal compliance.</p>
-        </article>
+        <main>
+            <section>
+                <h2>Education</h2>
+                <div class="resume-grid-container">
+                    <article>
+                        <h3>University of California, San Diego</h3>
+                        <p>Bachelor of Science in Data Science, Minor in Cognitive Science</p>
+                        <p>GPA: 3.8/4.0, Cum Laude</p>
+                        <p>Expected Graduation: April 2026</p>
+                        <p>Relevant Coursework: Data Structures, Computer Systems and C Programming, ML Models,
+                            Abstract Python, Probability Theory, Multivariate Calculus, Linear Algebra, Discrete
+                            Mathematics</p>
+                    </article>
+                </div>
+            </section>
 
-        <article>
-            <header>
-                <h3>Software Engineer - Robotics Startup</h3>
-                <time datetime="2018-09">Sep 2018</time> - May 2023
-            </header>
-            <p>Developed cutting-edge robotic systems, collaborating with cross-functional teams to create innovative
-                solutions in autonomous navigation and AI.</p>
-        </article>
-    </section>
+            <section>
+                <h2>Experience</h2>
+                <div class="resume-grid-container">
+                    <article>
+                        <h3>Software Engineer Intern</h3>
+                        <p>Textron, Williamsport, PA</p>
+                        <time datetime="2024-06">June 2024 – August 2024</time>
+                        <ul>
+                            <li>Applied Random Forest ML techniques to analyze over 10,000 real-time flight data files
+                                from Cape Air,
+                                predicting engine performance decay and identifying key trends.</li>
+                            <li>Implemented a predictive maintenance strategy based on engine performance trends,
+                                potentially reducing downtime by 30% and saving significant costs.</li>
+                            <li>Developed a user-friendly dashboard using Shiny from R to visualize engine performance
+                                trends
+                                with real-time updates and customizable views.</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Software Engineering Intern</h3>
+                        <p>Pringle Robotics, Peoria, IL</p>
+                        <time datetime="2023-01">January 2023 – September 2023</time>
+                        <ul>
+                            <li>Engineered an ASPX data collection page using C#, TypeScript, and Angular.js, improving
+                                transaction processing efficiency by 83%.</li>
+                            <li>Designed backend scripts for a .NET microservice generator using C# and Bash, optimizing
+                                workflows and reducing microservice completion time by 95%.</li>
+                            <li>Executed SQL queries using SSMS to streamline data validation processes, reducing
+                                database anomalies by 14%.</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Software Engineering Intern</h3>
+                        <p>Infinite Options, Remote</p>
+                        <time datetime="2022-07">July 2022 – October 2022</time>
+                        <ul>
+                            <li>Developed a user-friendly dashboard for the Manifest Real Estate site using React.js,
+                                HTML,
+                                and CSS, increasing site usage by 22%.</li>
+                            <li>Enhanced SQL database updates from user inputs, achieving a 30% improvement in
+                                processing speed.</li>
+                            <li>Conducted unit testing on 50+ site components using Jest, boosting user satisfaction
+                                metrics by 18%.</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
 
-    <section id="education">
-        <header>
-            <h2>Education</h2>
-        </header>
-        <article>
-            <header>
-                <h3>University of California, Berkeley</h3>
-                <time datetime="2014-06">June 2014</time> - <time datetime="2018-05">May 2018</time>
-            </header>
-            <p>Bachelor of Science in Computer Science</p>
-        </article>
-    </section>
+            <section>
+                <h2>Projects</h2>
+                <div class="resume-grid-container">
+                    <article>
+                        <h3>Wordle Solver</h3>
+                        <p>C, Python, Makefile</p>
+                        <time datetime="2022-08">August 2022 – September 2022</time>
+                        <ul>
+                            <li>Developed a filtering algorithm in Linux, achieving 98% accuracy in 2-5 guesses.</li>
+                            <li>Expanded the word bank by 28% while maintaining a swift response time.</li>
+                            <li><a href="https://github.com/prashant2469/Wordle_Solver" target="_blank">GitHub</a></li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Bus Simulator</h3>
+                        <p>Python (NumPy, Matplotlib, HeapQ), Google Colab</p>
+                        <time datetime="2022-10">October 2022 – November 2022</time>
+                        <ul>
+                            <li>Simulated UCSC public transportation efficiency, identifying key bottlenecks.</li>
+                            <li>Used Matplotlib to visualize simulation data, leading to a proposed bus stop addition
+                                that improved route efficiency by 13%.</li>
+                            <li><a href="https://colab.research.google.com/drive/1SQ8s-kr5pqA88b6zJj92X2y1whGgf-Qr?usp=sharing"
+                                    target="_blank">Colab</a></li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
 
-    <section id="skills">
-        <header>
-            <h2>Skills</h2>
-        </header>
-        <ul>
-            <li>Programming Languages: Python, JavaScript, HTML, CSS</li>
-            <li>Frameworks: React, Node.js, Django</li>
-            <li>Property Management Software: Appfolio, Buildium</li>
-            <li>Languages: English, Spanish</li>
-        </ul>
-    </section>
+            <section>
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li><strong>Languages/Frameworks:</strong> Python (Pandas, Scikit-learn, TensorFlow, NumPy,
+                        PyTorch), R, SQL (MySQL, DB Management),
+                        MongoDB, C/C++, C# (.NET), Java, Bash, JavaScript (React.js, Next.js), TypeScript, Angular.js,
+                        HTML/CSS</li>
+                    <li><strong>Development Tools:</strong> Git, Android Kotlin, Azure, Postman, Jest, Tableau, VS Code,
+                        Microsoft Visual Studio</li>
+                    <li><strong>Certifications:</strong> IBM - Data Science Fundamentals with SQL and Python, University
+                        of Michigan - Using Python to Access Web Data</li>
+                </ul>
+            </section>
+        </main>
 
-    <section id="contact">
-        <header>
-            <h2>Contact Information</h2>
-        </header>
-        <p>Email: <a href="mailto:prashant3.potluri@gmail.com">prashant3.potluri@gmail.com</a></p>
-        <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/prashantpotluri"
-                target="_blank">linkedin.com/in/prashantpotluri</a></p>
-    </section>
+        <footer>
+            <p>Last updated: <time datetime="2024-02-03">February 3, 2024</time></p>
+        </footer>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Prashant Potluri. All rights reserved.</p>
-    </footer>
+    <script type="module" src="../global.js"></script>
 </body>
 
 </html>
