@@ -6,12 +6,12 @@ const projectsContainer = document.querySelector('.projects');
 // Function to load and render projects
 async function loadProjects() {
     try {
-        const projects = await fetchJSON('../lib/projects.json');
+        const projects = await fetchJSON('/portfolio/lib/projects.json');
 
         // Update the projects count in the title
         const projectsTitle = document.querySelector('.projects-title');
         if (Array.isArray(projects)) {
-            projectsTitle.textContent = `${projects.length} Projects`; // Change format to "12 Projects"
+            projectsTitle.textContent = `${projects.length} Projects`;
         }
 
         // Check if projects is an array and has content

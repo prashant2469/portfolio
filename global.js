@@ -189,18 +189,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
         containerElement.appendChild(article);
     });
 }
-/*
-const sampleProject = {
-    title: "My Awesome Project",
-    image: "path/to/image.png",
-    description: "This project does amazing things."
-};
 
-const container = document.getElementById('projects-container'); // Ensure this element exists in your HTML
-renderProjects(sampleProject, container, 'h3'); // Test with h3
-renderProjects(sampleProject, container, 'h1'); // Test with h1
-renderProjects(sampleProject, container, 'h4'); // Test with h4
-*/
 
 export async function fetchGitHubData(username) {
     // Fetch data from the GitHub API for the specified username
