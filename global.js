@@ -20,6 +20,27 @@ document.body.insertAdjacentHTML(
 
 
 // Function to set the color scheme
+
+
+// Set the initial value based on the OS color scheme or localStorage
+const themeSelector = document.getElementById('theme-selector');
+if (localStorage.colorScheme) {
+    themeSelector.value = localStorage.colorScheme; // Set to saved preference
+    setColorScheme(localStorage.colorScheme); // Apply the saved color scheme
+} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    themeSelector.value = "dark"; // Set to dark if OS is in dark mode
+    setColorScheme("dark");
+} else {
+    themeSelector.value = "light"; // Set to light if OS is in light mode
+    setColorScheme("light"); // Apply light mode
+}
+
+// Add event listener to change the color scheme
+themeSelector.addEventListener('input', function (event) {
+    console.log('color scheme changed to', event.target.value);
+    setColorScheme(event.target.value); // Call the function to set the color scheme
+});
+
 function setColorScheme(colorScheme) {
     document.documentElement.style.setProperty('color-scheme', colorScheme);
     localStorage.colorScheme = colorScheme; // Save preference to localStorage
@@ -43,26 +64,6 @@ function setColorScheme(colorScheme) {
         nav.style.borderBottomColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
     }
 }
-
-// Set the initial value based on the OS color scheme or localStorage
-const themeSelector = document.getElementById('theme-selector');
-if (localStorage.colorScheme) {
-    themeSelector.value = localStorage.colorScheme; // Set to saved preference
-    setColorScheme(localStorage.colorScheme); // Apply the saved color scheme
-} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    themeSelector.value = "dark"; // Set to dark if OS is in dark mode
-    setColorScheme("dark");
-} else {
-    themeSelector.value = "light"; // Set to light if OS is in light mode
-    setColorScheme("light"); // Apply light mode
-}
-
-// Add event listener to change the color scheme
-themeSelector.addEventListener('input', function (event) {
-    console.log('color scheme changed to', event.target.value);
-    setColorScheme(event.target.value); // Call the function to set the color scheme
-});
-
 // Ensure the nav bar is updated on page load
 window.addEventListener('load', () => {
     const nav = document.querySelector('nav');
@@ -73,7 +74,17 @@ window.addEventListener('load', () => {
     }
 });
 
-// Define the pages for the navigation menu
+// Define the pages for the navigation menu for LOCAL
+// let pages = [
+//     { url: '../index.html', title: 'Home' }, //change when pushing ../
+//     { url: '../projects/index.html', title: 'Projects' },
+//     { url: '../contact/index.html', title: 'Contact' },
+//     { url: '../resume/index.html', title: 'Resume' },
+//     { url: 'https://github.com/prashant2469', title: 'GitHub Profile' }// External link
+
+// ];
+
+
 let pages = [
     { url: 'index.html', title: 'Home' },
     { url: 'projects/index.html', title: 'Projects' },
@@ -92,7 +103,6 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 
 const BASE_PATH = '/portfolio/';
 
-// Iterate over the pages to create links
 for (let p of pages) {
     let url = p.url; // This should not have a leading slash
     let title = p.title;
@@ -109,10 +119,7 @@ for (let p of pages) {
 
     // Adjust the URL if we are not on the home page
     if (!ARE_WE_HOME) {
-        // Prepend '/portfolio/' to internal page links
         url = '/portfolio/' + url;
-        //url = url.startsWith('/') ? url : '../' + url;
-        //url = '../' + url
     }
 
     // Create the link element
@@ -157,35 +164,43 @@ export async function fetchJSON(url) {
     }
 }
 
-//fetchJSON('../lib/projects.json')
 
 // Function to render project details
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-    // Check if the containerElement is a valid DOM element
-    if (!(containerElement instanceof HTMLElement)) {
-        console.error('Invalid container element provided.');
-        return; // Exit the function if the container is not valid
+    if (!Array.isArray(projects) || !containerElement) {
+        console.error("Invalid arguments passed to renderProjects");
+        return;
     }
 
-    // Clear existing content in the container
-    containerElement.innerHTML = '';
+    containerElement.innerHTML = ''; // Clear previous content
 
-    // Validate heading level
-    const validHeadingLevels = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-    const headingTag = validHeadingLevels.includes(headingLevel) ? headingLevel : 'h2'; // Default to h2 if invalid
-
-    // Loop through each project and create an article element
     projects.forEach(project => {
-        const article = document.createElement('article');
+        const article = document.createElement("article");
+        const title = document.createElement(headingLevel);
+        title.textContent = project.title;
 
-        // Define the content dynamically with checks for missing data
-        article.innerHTML = `
-            <${headingTag}>${project.title || 'Untitled Project'}</${headingTag}>
-            <img src="${project.image || 'path/to/default/image.png'}" alt="${project.title || 'Project Image'}">
-            <p>${project.description || 'No description available.'}</p>
-        `;
+        const img = document.createElement("img");
+        img.src = project.image || "path/to/placeholder-image.png";
+        img.alt = project.title;
 
-        // Append the article to the container
+        const description = document.createElement("p");
+        description.textContent = project.description;
+
+        // Add year under the description
+        const year = document.createElement("p");
+        year.textContent = `c. ${project.year || "2024"}`;
+        year.style.fontStyle = "italic";
+        year.style.fontFamily = "Baskerville, serif"; // Optional styling
+        year.style.fontVariantNumeric = "oldstyle-nums"; // To match the style in the lab screenshot
+
+        const textContainer = document.createElement("div");
+        textContainer.appendChild(description);
+        textContainer.appendChild(year); // Wrap description and year in same div
+
+        article.appendChild(title);
+        article.appendChild(img);
+        article.appendChild(textContainer);
+
         containerElement.appendChild(article);
     });
 }

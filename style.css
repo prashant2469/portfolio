@@ -8,12 +8,12 @@
   /* Light gray */
   --text-color: #333;
   /* Dark gray for better readability */
-  --nav-background: #2c3e50;
-  /* Dark navy */
-  --nav-text: #ecf0f1;
-  /* Light grayish white */
-  --nav-hover: #2980b9;
-  /* Darker blue */
+  --nav-background: #444;
+  /* Neutral gray for nav bar */
+  --nav-text: #f8f8f8;
+  /* Softer white for better contrast */
+  --nav-hover: #555;
+  /* Slightly darker gray for hover */
   --border-color: #ccc;
 }
 
@@ -57,6 +57,36 @@ nav a:hover {
   border-radius: 5px;
 }
 
+/* ---- DARK MODE ---- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #1e1e1e;
+    --text-color: #f1f1f1;
+    --nav-background: #333;
+    /* Darker gray for dark mode */
+    --nav-text: #fff;
+    --nav-hover: #555;
+    /* Slightly lighter hover in dark mode */
+  }
+
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+  nav {
+    background-color: var(--nav-background);
+  }
+
+  nav a {
+    color: var(--nav-text);
+  }
+
+  nav a:hover {
+    background-color: var(--nav-hover);
+  }
+}
+
 /* ---- HEADINGS ---- */
 h1 {
   font-size: 3rem;
@@ -74,6 +104,14 @@ h3,
 h4 {
   font-size: 1.5rem;
   color: var(--primary-color);
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  /* Do not clip shapes outside the viewBox */
+  overflow: visible;
 }
 
 /* ---- FORMS ---- */
@@ -177,7 +215,7 @@ footer {
     --background-color: #1e1e1e;
     --text-color: #f1f1f1;
     --nav-background: #222;
-    --nav-text: #fff;
+    --nav-text: #484ba4;
     --nav-hover: #3498db;
   }
 
@@ -247,4 +285,73 @@ footer {
   form {
     max-width: 100%;
   }
+}
+
+/* Container for pie chart and legend */
+.container {
+  display: flex;
+  align-items: center;
+  /* Aligns chart and legend vertically */
+  gap: 20px;
+  /* Space between the chart and the legend */
+  justify-content: center;
+  /* Centers them in the available space */
+}
+
+/* Make sure the pie chart doesn't shrink */
+.container svg {
+  flex: 0 0 auto;
+}
+
+/* Legend should take available space */
+.legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 8px;
+  padding: 10px;
+}
+
+/* Style each legend item */
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Style the color swatches */
+.legend-item .swatch {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Highlight selected pie wedge */
+.selected-wedge {
+  stroke: black !important;
+  /* Add a black border to selected wedge */
+  stroke-width: 3px !important;
+  opacity: 1 !important;
+  /* Make selected wedge fully visible */
+}
+
+/* Dim unselected wedges */
+.unselected-wedge {
+  opacity: 0.5;
+  /* Make unselected wedges slightly transparent */
+}
+
+/* Highlight selected legend item */
+.legend-item.selected {
+  font-weight: bold;
+  opacity: 1 !important;
+  /* Make selected legend fully visible */
+}
+
+/* Dim unselected legend items */
+.legend-item.dimmed {
+  opacity: 0.5;
 }
