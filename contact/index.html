@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Prashant Potluri</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Ensure this path is correct -->
+</head>
+
+<body>
+    <script type="module" src="../global.js"></script>
+
+    <h1>Contact</h1>
+
+    <!-- Contact Form -->
+    <form action="mailto:ppraveen@ucsd.edu" method="POST" enctype="text/plain">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="body" required></textarea>
+
+        <button type="submit">Send</button>
+    </form>
+    <!-- ... existing code ... -->
+</body>
+
+</html>

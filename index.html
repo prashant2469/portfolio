@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Potluri: Personal site and portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="global.js" defer></script>
+</head>
+
+<body>
+    <h1 class="centered-name">Prashant Potluri</h1>
+    <div class="image-container">
+        <p class="centered-text">I'm a fourth year Data Science student minoring in Cognitive Science at the University
+            of California, San Diego.
+            I enjoy playing basketball, and I love trying & learning new things.
+        </p>
+        <img src="images/2.jpeg" alt="house" class="centered-image">
+    </div>
+    <h2>Latest Projects</h2>
+    <div class="projects">
+        <!-- Dynamically added content will appear here -->
+    </div>
+    <h2>GitHub Profile Stats</h2>
+    <div id="profile-stats">
+        <div class="stat">
+            <h3>FOLLOWERS</h3>
+            <p id="followers-count">${githubData.followers}</p>
+        </div>
+        <div class="stat">
+            <h3>FOLLOWING</h3>
+            <p id="following-count">${githubData.following}</p>
+        </div>
+        <div class="stat">
+            <h3>PUBLIC REPOS</h3>
+            <p id="repos-count">${githubData.public_repos}</p>
+        </div>
+        <div class="stat">
+            <h3>PUBLIC GISTS</h3>
+            <p id="gists-count">${githubData.public_gists}</p>
+        </div>
+    </div>
+    <script src="index.js" type="module" defer></script>
+</body>
+
+</html>

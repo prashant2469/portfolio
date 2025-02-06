@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Taylor Swift Song Recommender",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Recommends the most similar Taylor Swift song to the song of your choice.",
+        "year": "2024"
+    },
+    {
+        "title": "Calorie Count Predictor",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Predicts the number of calories in a meal using machine learning.",
+        "year": "2024"
+    },
+    {
+        "title": "Wordle Solver",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Solves the game Wordle within 2-5 guesses.",
+        "year": "2023"
+    },
+    {
+        "title": "Non impedit tenetur cumque!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Consectetur odit quam animi a voluptatum quaerat ratione esse facere voluptates tempora, et fugiat sit provident ducimus. Praesentium, id earum? Ut autem ipsa quos numquam nemo harum dolorum sit rerum?",
+        "year": "2022"
+    },
+    {
+        "title": "Magnam, perferendis sapiente? Dicta!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Quaerat laboriosam enim quae minima quam possimus consequatur voluptate mollitia autem eius distinctio maiores quis suscipit odio architecto debitis totam itaque, officiis incidunt ab nisi aperiam! Earum deleniti maiores iure.",
+        "year": "2021"
+    },
+    {
+        "title": "Reprehenderit cupiditate ab ipsa.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Consequuntur amet sapiente ut animi eaque nostrum aspernatur ipsam sed, debitis accusantium, pariatur minus, quam sint voluptatum? Sed voluptate quae ullam expedita commodi odit nostrum et ad, exercitationem minus delectus!",
+        "year": "2020"
+    },
+    {
+        "title": "Odit reiciendis enim quaerat.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Blanditiis reiciendis impedit nobis, vitae ipsa, voluptatem numquam esse vero voluptas, voluptate quidem dicta beatae molestias aut. Rem hic voluptatum sequi laborum? Accusamus ex non debitis eveniet? Praesentium, iusto quia!",
+        "year": "2023"
+    },
+    {
+        "title": "Dolore consequuntur explicabo ea!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Aspernatur a earum dolores ullam esse rem voluptatum quia, libero est magnam autem! Dolore velit possimus repellendus totam quisquam libero sunt officiis, minima culpa rerum. Repellat quidem vel eos atque.",
+        "year": "2022"
+    },
+    {
+        "title": "Sit, eaque adipisci! Voluptatum?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Repudiandae adipisci nostrum quis ea temporibus sint ut assumenda hic pariatur expedita quia minima, itaque similique odit eius quo vero quasi placeat fugiat animi quisquam consectetur autem neque. Vero, nulla?",
+        "year": "2021"
+    },
+    {
+        "title": "Nostrum amet recusandae quisquam!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Soluta vitae iure eum quidem? Iste dolore vitae eveniet aut debitis, laborum quaerat repellendus id harum distinctio pariatur. Quos dolorum quaerat neque tempora incidunt dignissimos blanditiis doloribus temporibus, labore dolor.",
+        "year": "2020"
+    },
+    {
+        "title": "Doloribus consectetur veritatis quos.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Cumque, dolore quae aut ea qui provident esse earum sunt iusto velit amet error quisquam officiis molestiae minus, temporibus odio nihil porro. Quam repellendus nisi perspiciatis, facere magni recusandae. Molestiae.",
+        "year": "2023"
+    },
+    {
+        "title": "Debitis tempora ab eaque.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Aut eaque a aliquam quam odit quos sed iusto numquam debitis cum commodi sit, maiores ea tenetur culpa iste. Natus sit obcaecati velit accusamus doloremque asperiores expedita ipsa iste debitis.",
+        "year": "2022"
+    }
+]
