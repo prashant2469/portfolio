@@ -74,7 +74,7 @@ window.addEventListener('load', () => {
     }
 });
 
-// Define the pages for the navigation menu for LOCAL
+// // Define the pages for the navigation menu for LOCAL
 // let pages = [
 //     { url: '../index.html', title: 'Home' }, //change when pushing ../
 //     { url: '../projects/index.html', title: 'Projects' },
