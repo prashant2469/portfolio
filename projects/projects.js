@@ -10,7 +10,7 @@ let selectedYear = null; // Stores the currently selected year for filtering
 // Function to load and render projects
 async function loadProjects() {
     try {
-        //const projects = await fetchJSON('../lib/projects.json'); //for local
+        // const projects = await fetchJSON('../lib/projects.json'); //for local
         const projects = await fetchJSON('/portfolio/lib/projects.json');
 
         allProjects = projects; // Store original projects data

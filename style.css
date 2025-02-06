@@ -329,29 +329,26 @@ footer {
   display: inline-block;
 }
 
-/* Highlight selected pie wedge */
+/* Highlight the selected wedge */
 .selected-wedge {
-  stroke: black !important;
-  /* Add a black border to selected wedge */
-  stroke-width: 3px !important;
-  opacity: 1 !important;
-  /* Make selected wedge fully visible */
+  opacity: 1;
+  stroke-width: 3px;
+  /* stroke: #000; */
+  /* Optional: Add black stroke to highlight */
 }
 
-/* Dim unselected wedges */
+/* Dim the unselected wedges */
 .unselected-wedge {
-  opacity: 0.5;
-  /* Make unselected wedges slightly transparent */
+  opacity: 0.3;
 }
 
-/* Highlight selected legend item */
+/* Highlight the selected legend item */
 .legend-item.selected {
   font-weight: bold;
-  opacity: 1 !important;
-  /* Make selected legend fully visible */
+  opacity: 1;
 }
 
-/* Dim unselected legend items */
+/* Dim non-selected legend items */
 .legend-item.dimmed {
-  opacity: 0.5;
+  opacity: 0.3;
 }
